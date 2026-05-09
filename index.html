@@ -4,44 +4,125 @@
 <head>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dipali Beauty Studio</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>
+    Dipali Beauty Studio
+  </title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- GOOGLE FONTS -->
 
-  <link rel="stylesheet" href="css/style.css">
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
 
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header class="header">
 
     <div class="container navbar">
 
+      <!-- LOGO -->
+
       <a href="#" class="logo">
-        Dipali Beauty Studio
+
+        Dipali<br>
+        Beauty Studio
+
       </a>
 
-      <button class="menu-toggle" id="menuToggle">
+      <!-- MOBILE MENU BUTTON -->
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+      >
         ☰
       </button>
 
-      <ul class="nav-links" id="navLinks">
+      <!-- NAVIGATION -->
 
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#booking">Booking</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul
+        class="nav-links"
+        id="navLinks"
+      >
+
+        <li>
+          <a href="#home">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="#about">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="#services">
+            Services
+          </a>
+        </li>
+
+        <li>
+          <a href="#gallery">
+            Gallery
+          </a>
+        </li>
+
+        <li>
+          <a href="#pricing">
+            Pricing
+          </a>
+        </li>
+
+        <li>
+          <a href="#booking">
+            Booking
+          </a>
+        </li>
+
+        <li>
+          <a href="#reviews">
+            Reviews
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact">
+            Contact
+          </a>
+        </li>
 
       </ul>
 
@@ -49,54 +130,91 @@
 
   </header>
 
-<!-- HERO SECTION -->
+  <!-- =========================
+       HERO
+  ========================== -->
 
-<section class="hero" id="home">
+  <section
+    class="hero"
+    id="home"
+  >
 
-  <div class="hero-full-image">
+    <div class="hero-full-image">
 
-    <img
-      src="images/aai.png"
-      alt="Dipali Beauty Studio"
-    >
+      <img
+        src="images/aai.png"
+        alt="Dipali Beauty Studio"
+      >
 
-  </div>
+    </div>
 
-</section>
+  </section>
 
-  <!-- ABOUT -->
+  <!-- =========================
+       ABOUT
+  ========================== -->
 
-  <section class="section" id="about">
+  <section
+    class="section"
+    id="about"
+  >
 
     <div class="container grid-2">
 
+      <!-- IMAGE -->
+
       <div>
 
-        <img src="images/about.png" alt="About">
+        <img
+          src="images/about.png"
+          alt="About Dipali Beauty Studio"
+          class="rounded-img"
+        >
 
       </div>
+
+      <!-- CONTENT -->
 
       <div>
 
         <p class="section-subtitle">
+
           About Us
+
         </p>
 
         <h2 class="section-title">
+
           Enhancing Your Natural Beauty
+
         </h2>
 
         <p>
+
           We provide premium beauty services
-          with professional care and modern styling.
+          with professional care,
+          modern styling,
+          luxury makeup and elegant beauty treatments.
+
         </p>
 
         <ul class="feature-list">
 
-          <li>Certified Beauty Professionals</li>
-          <li>Bridal Makeup Experts</li>
-          <li>Luxury Skincare Treatments</li>
-          <li>Clean & Hygienic Studio</li>
+          <li>
+            Certified Beauty Professionals
+          </li>
+
+          <li>
+            Bridal Makeup Experts
+          </li>
+
+          <li>
+            Luxury Skincare Treatments
+          </li>
+
+          <li>
+            Clean & Hygienic Studio
+          </li>
 
         </ul>
 
@@ -106,27 +224,43 @@
 
   </section>
 
-  <!-- SERVICES -->
+  <!-- =========================
+       SERVICES
+  ========================== -->
 
-  <section class="section bg-light" id="services">
+  <section
+    class="section bg-light"
+    id="services"
+  >
 
     <div class="container">
 
       <p class="section-subtitle center">
+
         Our Services
+
       </p>
 
       <h2 class="section-title center">
+
         Beauty Services We Offer
+
       </h2>
 
       <div class="services-grid">
 
-         <div class="service-card">
+        <!-- CARD -->
 
-          <img src="images/bridalmakeup.png" alt="Bridal Makeup">
+        <div class="service-card">
 
-          <h3>Bridal Makeup</h3>
+          <img
+            src="images/bridalmakeup.png"
+            alt="Bridal Makeup"
+          >
+
+          <h3>
+            Bridal Makeup
+          </h3>
 
           <p>
             HD bridal makeup with elegant styling.
@@ -134,11 +268,18 @@
 
         </div>
 
+        <!-- CARD -->
+
         <div class="service-card">
 
-          <img src="images/threading.png" alt="Threading">
+          <img
+            src="images/threading.png"
+            alt="Threading"
+          >
 
-          <h3>Threading</h3>
+          <h3>
+            Threading
+          </h3>
 
           <p>
             Professional eyebrow and face threading.
@@ -146,11 +287,18 @@
 
         </div>
 
+        <!-- CARD -->
+
         <div class="service-card">
 
-          <img src="images/facial.png" alt="Facial">
+          <img
+            src="images/facial.png"
+            alt="Facial"
+          >
 
-          <h3>Facial</h3>
+          <h3>
+            Facial
+          </h3>
 
           <p>
             Glow-enhancing facial treatments.
@@ -158,23 +306,37 @@
 
         </div>
 
+        <!-- CARD -->
+
         <div class="service-card">
 
-          <img src="images/haircut.png" alt="Hair Cut">
+          <img
+            src="images/haircut.png"
+            alt="Hair Cut"
+          >
 
-          <h3>Hair Cut</h3>
+          <h3>
+            Hair Cut
+          </h3>
 
-            <p>
-              Stylish haircuts and hair styling.
+          <p>
+            Stylish haircuts and hair styling.
           </p>
 
         </div>
 
+        <!-- CARD -->
+
         <div class="service-card">
 
-          <img src="images/haladmakeup.png" alt="Halad Makeup">
+          <img
+            src="images/haladmakeup.png"
+            alt="Halad Makeup"
+          >
 
-          <h3>Halad Makeup</h3>
+          <h3>
+            Halad Makeup
+          </h3>
 
           <p>
             Traditional haldi ceremony makeup.
@@ -182,11 +344,18 @@
 
         </div>
 
+        <!-- CARD -->
+
         <div class="service-card">
 
-          <img src="images/sidemakeup.png" alt="Side Makeup">
+          <img
+            src="images/sidemakeup.png"
+            alt="Party Makeup"
+          >
 
-          <h3>Party Makeup</h3>
+          <h3>
+            Party Makeup
+          </h3>
 
           <p>
             Makeup for parties and functions.
@@ -200,84 +369,109 @@
 
   </section>
 
-  <!-- GALLERY -->
+  <!-- =========================
+       GALLERY
+  ========================== -->
 
-<section class="section" id="gallery">
-
-  <div class="container">
-
-    <p class="section-subtitle center">
-      Gallery
-    </p>
-
-    <h2 class="section-title center">
-      Our Work
-    </h2>
-
-    <!-- GALLERY GRID -->
-
-    <div class="gallery-grid" id="galleryGrid">
-
-      <img src="images/gallery1.jpeg" alt="">
-      <img src="images/gallery2.jpeg" alt="">
-      <img src="images/gallery3.jpeg" alt="">
-      <img src="images/gallery4.jpeg" alt="">
-      <img src="images/gallery5.jpeg" alt="">
-      <img src="images/gallery6.jpeg" alt="">
-      <img src="images/gallery7.jpeg" alt="">
-
-    </div>
-
-    <!-- BUTTON -->
-
-    <div class="gallery-btn">
-
-      <button id="expandBtn" class="btn btn-primary">
-        View All Photos
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-  <!-- PRICING -->
-
-  <section class="section bg-light" id="pricing">
+  <section
+    class="section"
+    id="gallery"
+  >
 
     <div class="container">
 
       <p class="section-subtitle center">
-        Pricing
+
+        Gallery
+
       </p>
 
       <h2 class="section-title center">
+
+        Our Work
+
+      </h2>
+
+      <div
+        class="gallery-grid"
+        id="galleryGrid"
+      >
+
+        <img src="images/Gallery/gallery1.jpeg" alt="">
+        <img src="images/Gallery/gallery2.jpeg" alt="">
+        <img src="images/Gallery/gallery3.jpeg" alt="">
+        <img src="images/Gallery/gallery8.jpeg" alt="">
+        <img src="images/Gallery/gallery4.jpeg" alt="">
+        <img src="images/Gallery/gallery5.jpeg" alt="">
+        <img src="images/Gallery/gallery6.jpeg" alt="">
+        <img src="images/Gallery/gallery7.jpeg" alt="">
+        <img src="images/Gallery/gallery9.jpeg" alt="">
+        <img src="images/Gallery/gallery10.jpeg" alt="">
+        <img src="images/Gallery/gallery11.jpeg" alt="">
+        <img src="images/Gallery/gallery12.png" alt="">
+        <img src="images/Gallery/gallery13.jpeg" alt="">
+        <img src="images/Gallery/gallery14.jpeg" alt="">
+        <img src="images/Gallery/gallery15.jpeg" alt="">
+        <img src="images/Gallery/gallery16.jpeg" alt="">
+        <img src="images/Gallery/gallery17.jpeg" alt="">
+        <img src="images/Gallery/gallery18.png" alt="">
+        <img src="images/Gallery/gallery19.png" alt="">
+        <img src="images/Gallery/gallery20.jpeg" alt="">
+        <img src="images/Gallery/gallery21.jpeg" alt="">
+        <img src="images/Gallery/gallery22.jpeg" alt="">
+
+      </div>
+
+      <div class="gallery-btn">
+
+        <button
+          id="expandBtn"
+          class="btn btn-primary"
+        >
+
+          View All Photos
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       PRICING
+  ========================== -->
+
+  <section
+    class="section bg-light"
+    id="pricing"
+  >
+
+    <div class="container">
+
+      <p class="section-subtitle center">
+
+        Pricing
+
+      </p>
+
+      <h2 class="section-title center">
+
         Popular Packages
+
       </h2>
 
       <div class="pricing-grid">
 
-        <div class="price-card">
-
-          <h3>Basic Glow</h3>
-
-          <div class="price">
-            ₹999
-          </div>
-
-          <p>
-            Cleanup + Threading + Waxing
-          </p>
-
-        </div>
-
         <div class="price-card featured">
 
-          <h3>Bridal Package</h3>
+          <h3>
+            Bridal Makeup
+          </h3>
 
           <div class="price">
-            ₹15,999
+            Starting From ₹10,000*
           </div>
 
           <p>
@@ -288,14 +482,32 @@
 
         <div class="price-card">
 
-          <h3>Hair Spa</h3>
+          <h3>
+            Basic Glow
+          </h3>
 
           <div class="price">
-            ₹1,499
+            Starting From ₹999*
           </div>
 
           <p>
-            Hair Wash + Spa + Blow Dry
+            Cleanup + Threading + Waxing
+          </p>
+
+        </div>
+
+        <div class="price-card">
+
+          <h3>
+            Package
+          </h3>
+
+          <div class="price">
+            Starting From ₹15,999*
+          </div>
+
+          <p>
+            Package of Bridal Makeup + Facial.
           </p>
 
         </div>
@@ -306,362 +518,424 @@
 
   </section>
 
-  <!-- BOOKING -->
+  <!-- =========================
+       BOOKING
+  ========================== -->
 
-<section class="section" id="booking">
+  <section
+    class="section"
+    id="booking"
+  >
 
-  <div class="container">
+    <div class="container">
 
-    <p class="section-subtitle center">
-      Book Appointment
-    </p>
+      <p class="section-subtitle center">
 
-    <h2 class="section-title center">
-      Schedule Your Visit
-    </h2>
+        Book Appointment
 
-    <form class="booking-form" id="bookingForm">
+      </p>
 
-      <!-- FIRST NAME -->
+      <h2 class="section-title center">
 
-      <input 
-        type="text"
-        id="firstName"
-        placeholder="First Name"
-        required
+        Schedule Your Visit
+
+      </h2>
+
+      <form
+        class="booking-form"
+        id="bookingForm"
       >
 
-      <!-- LAST NAME -->
+        <input
+          type="text"
+          id="firstName"
+          placeholder="First Name"
+          required
+        >
 
-      <input 
-        type="text"
-        id="lastName"
-        placeholder="Last Name"
-        required
+        <input
+          type="text"
+          id="lastName"
+          placeholder="Last Name"
+          required
+        >
+
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Mobile Number"
+          maxlength="10"
+          required
+        >
+
+        <textarea
+          id="address"
+          rows="3"
+          placeholder="Address"
+          required
+        ></textarea>
+
+        <input
+          type="date"
+          id="date"
+          required
+        >
+
+        <select
+          id="time"
+          required
+        >
+
+          <option value="">
+            Select Time
+          </option>
+
+          <option>
+            10:00 AM
+          </option>
+
+          <option>
+            11:00 AM
+          </option>
+
+          <option>
+            12:00 PM
+          </option>
+
+          <option>
+            01:00 PM
+          </option>
+
+          <option>
+            02:00 PM
+          </option>
+
+          <option>
+            03:00 PM
+          </option>
+
+          <option>
+            04:00 PM
+          </option>
+
+          <option>
+            05:00 PM
+          </option>
+
+          <option>
+            06:00 PM
+          </option>
+
+        </select>
+
+        <select
+          id="service"
+          required
+        >
+
+          <option value="">
+            Select Service
+          </option>
+
+          <option>
+            Bridal Makeup
+          </option>
+
+          <option>
+            Facial
+          </option>
+
+          <option>
+            Hair Styling
+          </option>
+
+          <option>
+            Hair Spa
+          </option>
+
+          <option>
+            Threading
+          </option>
+
+          <option>
+            Party Makeup
+          </option>
+
+          <option>
+            Halad Makeup
+          </option>
+
+          <option>
+            Other
+          </option>
+
+          <option>
+            NA
+          </option>
+
+        </select>
+
+        <textarea
+          id="message"
+          rows="5"
+          placeholder="Additional Notes"
+        ></textarea>
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+        >
+
+          Book Appointment
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       REVIEWS
+  ========================== -->
+
+  <section
+    class="section bg-light"
+    id="reviews"
+  >
+
+    <div class="container">
+
+      <div class="reviews-top">
+
+        <p class="section-subtitle center">
+
+          Customer Reviews
+
+        </p>
+
+        <h2 class="section-title center">
+
+          What Our Clients Say
+
+        </h2>
+
+        <div class="rating-box">
+
+          <div class="rating-stars">
+
+            ⭐⭐⭐⭐⭐
+
+          </div>
+
+          <h3>
+            5.0 Rating
+          </h3>
+
+          <p>
+            Loved by our happy customers ❤️
+          </p>
+
+          <a
+            href="#"
+            class="btn btn-primary"
+          >
+
+            Rate Us On Google
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- REVIEW FORM -->
+
+      <form
+        id="reviewForm"
+        class="review-form"
       >
 
-      <!-- MOBILE -->
+        <input
+          type="text"
+          id="reviewName"
+          placeholder="Your Name"
+          required
+        >
 
-      <input 
-        type="tel"
-        id="mobile"
-        placeholder="Mobile Number"
-        maxlength="10"
-        required
-      >
+        <select
+          id="reviewRating"
+          required
+        >
 
-      <!-- ADDRESS -->
+          <option value="">
+            Select Rating
+          </option>
 
-      <textarea
-        id="address"
-        rows="3"
-        placeholder="Address"
-        required
-      ></textarea>
+          <option value="⭐☆☆☆☆">
+            ⭐ 1 Star
+          </option>
 
-      <!-- DATE -->
+          <option value="⭐⭐☆☆☆">
+            ⭐⭐ 2 Star
+          </option>
 
-      <input 
-        type="date"
-        id="bookingDate"
-        required
-      >
+          <option value="⭐⭐⭐☆☆">
+            ⭐⭐⭐ 3 Star
+          </option>
 
-      <!-- SERVICE -->
+          <option value="⭐⭐⭐⭐☆">
+            ⭐⭐⭐⭐ 4 Star
+          </option>
 
-      <select id="service" required>
+          <option value="⭐⭐⭐⭐⭐">
+            ⭐⭐⭐⭐⭐ 5 Star
+          </option>
 
-        <option value="">
-          Select Service
-        </option>
+        </select>
 
-        <option>Bridal Makeup</option>
-        <option>Facial</option>
-        <option>Hair Styling</option>
-        <option>Hair Spa</option>
-        <option>Threading</option>
-        <option>Party Makeup</option>
-        <option>Halad Makeup</option>
-        <option>Other</option>
-        <option>NA</option>
+        <textarea
+          id="reviewText"
+          rows="4"
+          placeholder="Write your experience..."
+          required
+        ></textarea>
 
-      </select>
+        <button
+          type="submit"
+          class="btn btn-primary"
+        >
 
-      <!-- NOTES -->
+          Submit Review
 
-      <textarea
-        id="notes"
-        rows="5"
-        placeholder="Additional Notes"
-      ></textarea>
+        </button>
 
-      <!-- BUTTON -->
+      </form>
 
-      <button type="submit" class="btn btn-primary">
-        Confirm Booking
-      </button>
+      <!-- REVIEWS LIST -->
 
-    </form>
+      <div
+        class="reviews-grid"
+        id="reviewsGrid"
+      ></div>
 
-  </div>
+    </div>
 
-</section>
+  </section>
 
-<!-- JAVASCRIPT -->
+  <!-- =========================
+       CONTACT
+  ========================== -->
 
-<script>
-
-document
-  .getElementById("bookingForm")
-  .addEventListener("submit", function(e){
-
-    e.preventDefault();
-
-    // GET VALUES
-
-    const firstName =
-      document.getElementById("firstName").value.trim();
-
-    const lastName =
-      document.getElementById("lastName").value.trim();
-
-    const mobile =
-      document.getElementById("mobile").value.trim();
-
-    const address =
-      document.getElementById("address").value.trim();
-
-    const bookingDate =
-      document.getElementById("bookingDate").value;
-
-    const service =
-      document.getElementById("service").value;
-
-    const notes =
-      document.getElementById("notes").value.trim();
-
-    // MOBILE VALIDATION
-
-    const mobilePattern = /^[6-9]\d{9}$/;
-
-    if(!mobilePattern.test(mobile)){
-
-      alert(
-        "Please enter valid 10 digit mobile number"
-      );
-
-      return;
-
-    }
-
-    // DATE VALIDATION
-
-    const selectedDate = new Date(bookingDate);
-
-    const today = new Date();
-
-    today.setHours(0,0,0,0);
-
-    if(selectedDate < today){
-
-      alert(
-        "Please select future date"
-      );
-
-      return;
-
-    }
-
-    // WHATSAPP MESSAGE
-
-    const message =
-`🌸 New Appointment Booking 🌸
-
-👩 Name:
-${firstName} ${lastName}
-
-📱 Mobile:
-${mobile}
-
-📍 Address:
-${address}
-
-💄 Service:
-${service}
-
-📅 Appointment Date:
-${bookingDate}
-
-📝 Notes:
-${notes || "NA"}
-`;
-
-    // YOUR MOBILE NUMBER
-
-const mobileNumber =
-  "9421522796";
-
-// SMS URL
-
-const smsURL =
-`sms:${mobileNumber}?body=${encodeURIComponent(message)}`;
-
-// OPEN SMS APP
-
-window.location.href = smsURL;F
-});
-
-</script>
-
-  <!-- CONTACT -->
-
-  <section class="section" id="contact">
+  <section
+    class="section"
+    id="contact"
+  >
 
     <div class="container grid-2">
+
+      <!-- LEFT -->
 
       <div>
 
         <p class="section-subtitle">
+
           Contact Us
+
         </p>
 
         <h2 class="section-title">
+
           Visit Our Studio
+
         </h2>
 
         <p class="contact-address">
 
-        Near Shree Sant Dnyaneshwar Temple,<br>
+          Near Shree Sant Dnyaneshwar Temple,<br>
 
-        Mahadev Chowk, Asoda,<br>
+          Mahadev Chowk, Asoda,<br>
 
-        Jalgaon, Maharashtra - 425101
+          Jalgaon, Maharashtra - 425101
 
         </p>
 
-         <a href="tel:+919421522796">
-          +91 9421522796
+        <br>
+
+        < <a href="tel:+919421522796">
+        📞 +91 9421522796
         </a>
 
-        /
+        <span>|</span>
 
         <a href="tel:+917798808081">
-          +91 7798808081
+        📞 +91 7798808081
         </a>
 
+       <!-- INSTAGRAM -->
+
+  <a
+    href="https://instagram.com/dipali_beauty.parlour"
+    target="_blank"
+    class="instagram-btn"
+  >
+    📸 Follow Us On Instagram
+  </a>
+
       </div>
+
+      <!-- MAP -->
 
       <iframe
         src="https://maps.google.com/maps?q=2JR5%2B75Q%20Asoda%20Maharashtra%20425101&z=16&output=embed"
         width="100%"
         height="350"
         style="border:0;border-radius:20px;"
-        loading="lazy">
+        loading="lazy"
+      >
       </iframe>
 
     </div>
 
   </section>
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer class="footer">
 
     <div class="container">
 
       <p>
+
         © 2026 Dipali Beauty Studio
+
       </p>
 
     </div>
 
   </footer>
 
-  <!-- REVIEWS -->
+  <!-- =========================
+       WHATSAPP
+  ========================== -->
 
-<section class="section bg-light" id="reviews">
-
-  <div class="container">
-
-    <p class="section-subtitle center">
-      Customer Reviews
-    </p>
-
-    <h2 class="section-title center">
-      What Our Clients Say
-    </h2>
-
-    <!-- REVIEW FORM -->
-
-    <form id="reviewForm" class="review-form">
-
-      <input
-        type="text"
-        id="reviewName"
-        placeholder="Your Name"
-        required
-      >
-
-      <select id="reviewRating" required>
-
-        <option value="">
-          Select Rating
-        </option>
-
-        <option value="⭐☆☆☆☆">
-          ⭐ 1 Star
-        </option>
-
-        <option value="⭐⭐☆☆☆">
-          ⭐⭐ 2 Star
-        </option>
-
-        <option value="⭐⭐⭐☆☆">
-          ⭐⭐⭐ 3 Star
-        </option>
-
-        <option value="⭐⭐⭐⭐☆">
-          ⭐⭐⭐⭐ 4 Star
-        </option>
-
-        <option value="⭐⭐⭐⭐⭐">
-          ⭐⭐⭐⭐⭐ 5 Star
-        </option>
-
-      </select>
-
-      <textarea
-        id="reviewText"
-        rows="4"
-        placeholder="Write your experience..."
-        required
-      ></textarea>
-
-      <button type="submit" class="btn btn-primary">
-        Submit Review
-      </button>
-
-    </form>
-
-    <!-- REVIEWS LIST -->
-
-    <div class="reviews-grid" id="reviewsGrid">
-
-    </div>
-
-  </div>
-
-</section>
-
-  <!-- WHATSAPP -->
-
-  <a href="https://wa.me/919421522796" class="whatsapp-float">
+  <a
+    href="https://wa.me/919421522796"
+    class="whatsapp-float"
+    target="_blank"
+  >
 
     💬
 
   </a>
 
+  <!-- JS -->
+
   <script src="js/style.js"></script>
 
 </body>
+
 </html>

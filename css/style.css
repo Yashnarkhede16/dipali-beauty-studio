@@ -96,16 +96,6 @@ img{
 
 }
 
-.contact-address{
-
-  line-height:2;
-
-  font-size:1.05rem;
-
-  color:#555;
-
-}
-
 /* =========================
    HEADER
 ========================= */
@@ -152,10 +142,8 @@ img{
 
   color:var(--dark);
 
-}
+  line-height:1.2;
 
-.logo span{
-  color:var(--primary);
 }
 
 .nav-links{
@@ -199,43 +187,24 @@ img{
 }
 
 /* =========================
-   HERO IMAGE ONLY
+   HERO
 ========================= */
 
 .hero{
 
   width:100%;
 
-  min-height:100vh;
-
-  padding-top:110px;
-
-  padding-bottom:40px;
+  padding-top:100px;
 
   background:#f8eef1;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  overflow:hidden;
 
 }
 
 .hero-full-image{
 
-  width:min(1400px,95%);
-
-  margin:auto;
-
-  border-radius:35px;
+  width:100%;
 
   overflow:hidden;
-
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.18);
 
 }
 
@@ -247,7 +216,7 @@ img{
 
   display:block;
 
-  object-fit:contain;
+  object-fit:cover;
 
 }
 
@@ -264,14 +233,6 @@ img{
   gap:50px;
 
   align-items:center;
-
-}
-
-.rounded-img{
-
-  border-radius:var(--radius);
-
-  box-shadow:var(--shadow);
 
 }
 
@@ -572,6 +533,265 @@ img{
 }
 
 /* =========================
+   REVIEWS
+========================= */
+
+.rating-box{
+
+  text-align:center;
+
+  margin-bottom:40px;
+
+}
+
+.rating-stars{
+
+  font-size:1.5rem;
+
+  color:#f4b400;
+
+  font-weight:700;
+
+  margin-bottom:10px;
+
+}
+
+.rating-text{
+
+  font-size:1.05rem;
+
+  color:#666;
+
+  margin-bottom:20px;
+
+}
+
+.google-review-btn{
+
+  display:inline-block;
+
+  background:#c86b85;
+
+  color:#fff;
+
+  text-decoration:none;
+
+  padding:14px 28px;
+
+  border-radius:999px;
+
+  font-weight:600;
+
+  transition:.3s ease;
+
+}
+
+.google-review-btn:hover{
+
+  transform:translateY(-4px);
+
+}
+
+.review-form{
+
+  max-width:700px;
+
+  margin:40px auto;
+
+  display:grid;
+
+  gap:18px;
+
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea{
+
+  width:100%;
+
+  padding:15px 18px;
+
+  border:1px solid #ddd;
+
+  border-radius:14px;
+
+  font-size:16px;
+
+  font-family:'Poppins',sans-serif;
+
+  outline:none;
+
+}
+
+.review-form textarea{
+  resize:none;
+}
+
+.reviews-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+  gap:25px;
+
+  margin-top:50px;
+
+}
+
+.review-card{
+
+  background:#fff;
+
+  padding:28px;
+
+  border-radius:24px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+  transition:.3s ease;
+
+}
+
+.review-card:hover{
+
+  transform:translateY(-5px);
+
+}
+
+.review-stars{
+
+  font-size:22px;
+
+  margin-bottom:14px;
+
+}
+
+.review-text{
+
+  color:#555;
+
+  line-height:1.8;
+
+  margin-bottom:18px;
+
+}
+
+.review-name{
+
+  font-weight:600;
+
+  color:#c86b85;
+
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-info{
+  margin-top:20px;
+}
+
+.contact-address{
+
+  line-height:2;
+
+  font-size:1.05rem;
+
+  color:#555;
+
+  margin-bottom:25px;
+
+}
+
+.contact-numbers{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  flex-wrap:wrap;
+
+  margin-bottom:28px;
+
+}
+
+.contact-numbers a{
+
+  text-decoration:none;
+
+  color:#c86b85;
+
+  font-weight:600;
+
+  font-size:1.05rem;
+
+  transition:.3s ease;
+
+}
+
+.contact-numbers a:hover{
+
+  color:#111;
+
+}
+
+.contact-numbers span{
+
+  color:#bbb;
+
+}
+
+.instagram-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:14px 26px;
+
+  border-radius:999px;
+
+  background:linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+
+  color:#fff;
+
+  text-decoration:none;
+
+  font-weight:600;
+
+  box-shadow:
+    0 10px 25px rgba(220,39,67,0.25);
+
+  transition:.35s ease;
+
+}
+
+.instagram-btn:hover{
+
+  transform:translateY(-4px) scale(1.02);
+
+  box-shadow:
+    0 15px 35px rgba(220,39,67,0.35);
+
+}
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -624,110 +844,6 @@ img{
 }
 
 /* =========================
-   REVIEWS
-========================= */
-
-.review-form{
-
-  max-width:700px;
-
-  margin:40px auto;
-
-  display:grid;
-
-  gap:18px;
-
-}
-
-.review-form input,
-.review-form select,
-.review-form textarea{
-
-  width:100%;
-
-  padding:15px 18px;
-
-  border:1px solid #ddd;
-
-  border-radius:14px;
-
-  font-size:16px;
-
-  font-family:'Poppins',sans-serif;
-
-  outline:none;
-
-}
-
-.review-form textarea{
-  resize:none;
-}
-
-/* REVIEW GRID */
-
-.reviews-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-
-  gap:25px;
-
-  margin-top:50px;
-
-}
-
-/* CARD */
-
-.review-card{
-
-  background:#fff;
-
-  padding:28px;
-
-  border-radius:24px;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.08);
-
-  transition:.3s ease;
-
-}
-
-.review-card:hover{
-
-  transform:translateY(-5px);
-
-}
-
-.review-stars{
-
-  font-size:22px;
-
-  margin-bottom:14px;
-
-}
-
-.review-text{
-
-  color:#555;
-
-  line-height:1.8;
-
-  margin-bottom:18px;
-
-}
-
-.review-name{
-
-  font-weight:600;
-
-  color:#c86b85;
-
-}
-
-/* =========================
    RESPONSIVE
 ========================= */
 
@@ -776,21 +892,25 @@ img{
     display:flex;
   }
 
-  .hero{
+  .logo{
 
-    min-height:auto;
-
-    padding-top:90px;
-
-    padding-bottom:20px;
+    font-size:1.4rem;
 
   }
 
-  .hero-full-image{
+  .hero{
 
-    width:96%;
+    padding-top:80px;
 
-    border-radius:22px;
+  }
+
+  .hero-full-image img{
+
+    width:100%;
+
+    height:auto;
+
+    object-fit:cover;
 
   }
 
@@ -807,12 +927,52 @@ img{
     height:240px;
   }
 
+  .contact-numbers{
+
+    gap:8px;
+
+    font-size:.95rem;
+
+  }
+
+  .contact-numbers a{
+
+    font-size:.95rem;
+
+  }
+
+  .instagram-btn{
+
+    width:100%;
+
+    justify-content:center;
+
+  }
+
 }
 
 @media(max-width:480px){
 
   .gallery-grid{
     grid-template-columns:1fr;
+  }
+
+  .logo{
+
+    font-size:1.1rem;
+
+  }
+
+  .section{
+
+    padding:70px 0;
+
+  }
+
+  .service-card img{
+
+    height:260px;
+
   }
 
 }

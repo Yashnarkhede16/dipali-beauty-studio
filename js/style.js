@@ -24,20 +24,60 @@ if(menuToggle){
 
 if(navLinks){
 
-  navLinks.querySelectorAll('a').forEach(link => {
+  navLinks
+    .querySelectorAll('a')
+    .forEach(link => {
 
-    link.addEventListener('click', () => {
+      link.addEventListener('click', () => {
 
-      navLinks.classList.remove('show');
+        navLinks.classList.remove('show');
+
+      });
 
     });
+
+}
+
+// ================================
+// GALLERY EXPAND
+// ================================
+
+const expandBtn =
+  document.getElementById('expandBtn');
+
+const galleryGrid =
+  document.getElementById('galleryGrid');
+
+if(expandBtn){
+
+  expandBtn.addEventListener('click', () => {
+
+    galleryGrid.classList.toggle('show-all');
+
+    if(
+      galleryGrid.classList.contains(
+        'show-all'
+      )
+    ){
+
+      expandBtn.innerText =
+        'Show Less';
+
+    }
+
+    else{
+
+      expandBtn.innerText =
+        'View All Photos';
+
+    }
 
   });
 
 }
 
 // ================================
-// CUSTOMER REVIEWS
+// REVIEW SYSTEM
 // ================================
 
 const reviewForm =
@@ -46,13 +86,14 @@ const reviewForm =
 const reviewsGrid =
   document.getElementById('reviewsGrid');
 
-// LOAD SAVED REVIEWS
+// LOAD REVIEWS
 
 window.addEventListener('load', () => {
 
   const savedReviews =
-    JSON.parse(localStorage.getItem('reviews'))
-    || [];
+    JSON.parse(
+      localStorage.getItem('reviews')
+    ) || [];
 
   savedReviews.forEach(review => {
 
@@ -64,56 +105,72 @@ window.addEventListener('load', () => {
 
 // SUBMIT REVIEW
 
-reviewForm.addEventListener('submit', function(e){
+if(reviewForm){
 
-  e.preventDefault();
+  reviewForm.addEventListener(
+    'submit',
+    function(e){
 
-  const name =
-    document.getElementById('reviewName')
-    .value
-    .trim();
+      e.preventDefault();
 
-  const rating =
-    document.getElementById('reviewRating')
-    .value;
+      const name =
+        document
+          .getElementById('reviewName')
+          .value
+          .trim();
 
-  const text =
-    document.getElementById('reviewText')
-    .value
-    .trim();
+      const rating =
+        document
+          .getElementById('reviewRating')
+          .value;
 
-  const review = {
+      const text =
+        document
+          .getElementById('reviewText')
+          .value
+          .trim();
 
-    name,
-    rating,
-    text
+      const review = {
 
-  };
+        name,
+        rating,
+        text
 
-  // ADD TO UI
+      };
 
-  addReviewToUI(review);
+      // ADD TO UI
 
-  // SAVE TO LOCAL STORAGE
+      addReviewToUI(review);
 
-  const savedReviews =
-    JSON.parse(localStorage.getItem('reviews'))
-    || [];
+      // SAVE LOCAL STORAGE
 
-  savedReviews.unshift(review);
+      const savedReviews =
+        JSON.parse(
+          localStorage.getItem('reviews')
+        ) || [];
 
-  localStorage.setItem(
-    'reviews',
-    JSON.stringify(savedReviews)
-  );
+      savedReviews.unshift(review);
 
-  // RESET FORM
+      localStorage.setItem(
+        'reviews',
+        JSON.stringify(savedReviews)
+      );
 
-  reviewForm.reset();
+      // RESET FORM
 
-});
+      reviewForm.reset();
 
-// FUNCTION
+      // SUCCESS MESSAGE
+
+      alert(
+        'Thank you for your review ❤️'
+      );
+
+    });
+
+}
+
+// ADD REVIEW FUNCTION
 
 function addReviewToUI(review){
 
@@ -143,46 +200,6 @@ function addReviewToUI(review){
 }
 
 // ================================
-// GALLERY EXPAND BUTTON
-// ================================
-
-const expandBtn =
-  document.getElementById('expandBtn');
-
-const galleryGrid =
-  document.getElementById('galleryGrid');
-
-if(expandBtn){
-
-  expandBtn.addEventListener('click', () => {
-
-    galleryGrid.classList.toggle('show-all');
-
-    // BUTTON TEXT CHANGE
-
-    if(
-      galleryGrid.classList.contains(
-        'show-all'
-      )
-    ){
-
-      expandBtn.innerText =
-        'Show Less';
-
-    }
-
-    else{
-
-      expandBtn.innerText =
-        'View All Photos';
-
-    }
-
-  });
-
-}
-
-// ================================
 // BOOKING FORM
 // ================================
 
@@ -193,7 +210,7 @@ const dateInput =
   document.getElementById('date');
 
 // ================================
-// SET MINIMUM DATE = TODAY
+// MIN DATE = TODAY
 // ================================
 
 if(dateInput){
@@ -223,7 +240,7 @@ if(dateInput){
 }
 
 // ================================
-// CONVERT 12H TO 24H
+// CONVERT TIME
 // ================================
 
 function convertTo24Hour(time12h){
@@ -260,7 +277,13 @@ function convertTo24Hour(time12h){
 }
 
 // ================================
-// FORM SUBMIT
+// OTP SYSTEM
+// ================================
+
+let generatedOTP = "";
+
+// ================================
+// BOOKING SUBMIT
 // ================================
 
 if(bookingForm){
@@ -269,141 +292,169 @@ if(bookingForm){
     'submit',
     function(e){
 
-    e.preventDefault();
+      e.preventDefault();
 
-    // ================================
-    // GET VALUES
-    // ================================
+      // ================================
+      // GET VALUES
+      // ================================
 
-    const firstName =
-      document.getElementById(
-        'firstName'
-      )
-      .value
-      .trim();
+      const firstName =
+        document
+          .getElementById('firstName')
+          .value
+          .trim();
 
-    const lastName =
-      document.getElementById(
-        'lastName'
-      )
-      .value
-      .trim();
+      const lastName =
+        document
+          .getElementById('lastName')
+          .value
+          .trim();
 
-    const phone =
-      document.getElementById(
-        'phone'
-      )
-      .value
-      .trim();
+      const phone =
+        document
+          .getElementById('phone')
+          .value
+          .trim();
 
-    const address =
-      document.getElementById(
-        'address'
-      )
-      .value
-      .trim();
+      const address =
+        document
+          .getElementById('address')
+          .value
+          .trim();
 
-    const selectedDate =
-      document.getElementById(
-        'date'
-      )
-      .value;
+      const selectedDate =
+        document
+          .getElementById('date')
+          .value;
 
-    const selectedTime =
-      document.getElementById(
-        'time'
-      )
-      .value;
+      const selectedTime =
+        document
+          .getElementById('time')
+          .value;
 
-    const service =
-      document.getElementById(
-        'service'
-      )
-      .value;
+      const service =
+        document
+          .getElementById('service')
+          .value;
 
-    const message =
-      document.getElementById(
-        'message'
-      )
-      .value
-      .trim();
+      const message =
+        document
+          .getElementById('message')
+          .value
+          .trim();
 
-    // ================================
-    // VALIDATE MOBILE
-    // ================================
+      // ================================
+      // MOBILE VALIDATION
+      // ================================
 
-    if(phone.length < 10){
+      const mobilePattern =
+        /^[6-9]\d{9}$/;
 
-      alert(
-        'Please enter valid mobile number.'
+      if(
+        !mobilePattern.test(phone)
+      ){
+
+        alert(
+          'Enter valid 10 digit mobile number.'
+        );
+
+        return;
+
+      }
+
+      // ================================
+      // CHECK DATE & TIME
+      // ================================
+
+      const convertedTime =
+        convertTo24Hour(selectedTime);
+
+      const currentDateTime =
+        new Date();
+
+      const bookingDateTime =
+        new Date(
+          `${selectedDate}T${convertedTime}`
+        );
+
+      if(
+        bookingDateTime <=
+        currentDateTime
+      ){
+
+        alert(
+          'Please select future appointment date and time.'
+        );
+
+        return;
+
+      }
+
+      // ================================
+      // GENERATE OTP
+      // ================================
+
+      generatedOTP =
+        Math.floor(
+          1000 + Math.random() * 9000
+        ).toString();
+
+      // ================================
+      // SEND OTP MESSAGE
+      // ================================
+
+      const otpMessage =
+`Your Dipali Beauty Studio OTP is: ${generatedOTP}`;
+
+      const otpWhatsappURL =
+`https://wa.me/91${phone}?text=${encodeURIComponent(otpMessage)}`;
+
+      window.open(
+        otpWhatsappURL,
+        '_blank'
       );
 
-      return;
+      // ================================
+      // ASK USER OTP
+      // ================================
 
-    }
+      const enteredOTP =
+        prompt(
+          'Enter OTP received on WhatsApp'
+        );
 
-    // ================================
-    // CONVERT TIME
-    // ================================
+      // ================================
+      // OTP CHECK
+      // ================================
 
-    const convertedTime =
-      convertTo24Hour(selectedTime);
+      if(
+        enteredOTP !== generatedOTP
+      ){
 
-    // ================================
-    // CURRENT DATE/TIME
-    // ================================
+        alert(
+          'Invalid OTP. Please try again.'
+        );
 
-    const currentDateTime =
-      new Date();
+        return;
 
-    // ================================
-    // BOOKING DATE/TIME
-    // ================================
+      }
 
-    const bookingDateTime =
-      new Date(
-        `${selectedDate}T${convertedTime}`
-      );
+      // ================================
+      // FINAL WHATSAPP MESSAGE
+      // ================================
 
-    // ================================
-    // CHECK FUTURE DATE/TIME
-    // ================================
+      const whatsappNumber =
+        '919421522796';
 
-    if(
-      bookingDateTime <=
-      currentDateTime
-    ){
+      const whatsappMessage =
 
-      alert(
-        'Please select future appointment date and time.'
-      );
+`🌸 NEW APPOINTMENT BOOKING 🌸
 
-      return;
+👩 Name:
+${firstName} ${lastName}
 
-    }
-
-    // ================================
-    // WHATSAPP NUMBER
-    // ================================
-
-    const whatsappNumber =
-      '919421522796';
-
-    // ================================
-    // WHATSAPP MESSAGE
-    // ================================
-
-    const whatsappMessage =
-
-`📌 NEW APPOINTMENT BOOKING
-
-----------------------------
-
-🙂 First Name: ${firstName}
-
-🙂 Last Name: ${lastName}
-
-📞 Mobile Number: ${phone}
+📞 Mobile:
+${phone}
 
 🏠 Address:
 ${address}
@@ -414,73 +465,42 @@ ${selectedDate}
 ⏰ Appointment Time:
 ${selectedTime}
 
-💄 Selected Service:
+💄 Service:
 ${service}
 
-📝 Additional Notes:
-${message}
+📝 Notes:
+${message || "NA"}
 
-----------------------------
-
-Thank you
+Thank you ❤️
 Dipali Beauty Studio`;
 
-    // ================================
-    // ENCODE MESSAGE
-    // ================================
+      const encodedMessage =
+        encodeURIComponent(
+          whatsappMessage
+        );
 
-    const encodedMessage =
-      encodeURIComponent(
-        whatsappMessage
-      );
-
-    // ================================
-    // CREATE URL
-    // ================================
-
-    const whatsappURL =
+      const whatsappURL =
 `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-    // ================================
-    // OPEN WHATSAPP
-    // ================================
+      // ================================
+      // OPEN WHATSAPP
+      // ================================
 
-    try {
-
-      const newWindow =
-        window.open(
-          whatsappURL,
-          '_blank'
-        );
-
-      if(newWindow){
-
-        alert(
-          'Appointment request sent successfully!'
-        );
-
-        bookingForm.reset();
-
-      }
-
-      else {
-
-        alert(
-          'Failed to open WhatsApp. Please allow popups.'
-        );
-
-      }
-
-    }
-
-    catch(error){
-
-      alert(
-        'Booking failed due to browser or network issue.'
+      window.open(
+        whatsappURL,
+        '_blank'
       );
 
-    }
+      // ================================
+      // SUCCESS
+      // ================================
 
-  });
+      alert(
+        'Booking request submitted successfully ❤️'
+      );
+
+      bookingForm.reset();
+
+    });
 
 }
