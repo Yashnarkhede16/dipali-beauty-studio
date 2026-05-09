@@ -577,6 +577,82 @@ window.location.href = smsURL;F
 
   </footer>
 
+  <!-- REVIEWS -->
+
+<section class="section bg-light" id="reviews">
+
+  <div class="container">
+
+    <p class="section-subtitle center">
+      Customer Reviews
+    </p>
+
+    <h2 class="section-title center">
+      What Our Clients Say
+    </h2>
+
+    <!-- REVIEW FORM -->
+
+    <form id="reviewForm" class="review-form">
+
+      <input
+        type="text"
+        id="reviewName"
+        placeholder="Your Name"
+        required
+      >
+
+      <select id="reviewRating" required>
+
+        <option value="">
+          Select Rating
+        </option>
+
+        <option value="⭐☆☆☆☆">
+          ⭐ 1 Star
+        </option>
+
+        <option value="⭐⭐☆☆☆">
+          ⭐⭐ 2 Star
+        </option>
+
+        <option value="⭐⭐⭐☆☆">
+          ⭐⭐⭐ 3 Star
+        </option>
+
+        <option value="⭐⭐⭐⭐☆">
+          ⭐⭐⭐⭐ 4 Star
+        </option>
+
+        <option value="⭐⭐⭐⭐⭐">
+          ⭐⭐⭐⭐⭐ 5 Star
+        </option>
+
+      </select>
+
+      <textarea
+        id="reviewText"
+        rows="4"
+        placeholder="Write your experience..."
+        required
+      ></textarea>
+
+      <button type="submit" class="btn btn-primary">
+        Submit Review
+      </button>
+
+    </form>
+
+    <!-- REVIEWS LIST -->
+
+    <div class="reviews-grid" id="reviewsGrid">
+
+    </div>
+
+  </div>
+
+</section>
+
   <!-- WHATSAPP -->
 
   <a href="https://wa.me/919421522796" class="whatsapp-float">

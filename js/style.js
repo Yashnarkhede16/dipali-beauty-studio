@@ -37,6 +37,112 @@ if(navLinks){
 }
 
 // ================================
+// CUSTOMER REVIEWS
+// ================================
+
+const reviewForm =
+  document.getElementById('reviewForm');
+
+const reviewsGrid =
+  document.getElementById('reviewsGrid');
+
+// LOAD SAVED REVIEWS
+
+window.addEventListener('load', () => {
+
+  const savedReviews =
+    JSON.parse(localStorage.getItem('reviews'))
+    || [];
+
+  savedReviews.forEach(review => {
+
+    addReviewToUI(review);
+
+  });
+
+});
+
+// SUBMIT REVIEW
+
+reviewForm.addEventListener('submit', function(e){
+
+  e.preventDefault();
+
+  const name =
+    document.getElementById('reviewName')
+    .value
+    .trim();
+
+  const rating =
+    document.getElementById('reviewRating')
+    .value;
+
+  const text =
+    document.getElementById('reviewText')
+    .value
+    .trim();
+
+  const review = {
+
+    name,
+    rating,
+    text
+
+  };
+
+  // ADD TO UI
+
+  addReviewToUI(review);
+
+  // SAVE TO LOCAL STORAGE
+
+  const savedReviews =
+    JSON.parse(localStorage.getItem('reviews'))
+    || [];
+
+  savedReviews.unshift(review);
+
+  localStorage.setItem(
+    'reviews',
+    JSON.stringify(savedReviews)
+  );
+
+  // RESET FORM
+
+  reviewForm.reset();
+
+});
+
+// FUNCTION
+
+function addReviewToUI(review){
+
+  const div =
+    document.createElement('div');
+
+  div.classList.add('review-card');
+
+  div.innerHTML = `
+
+    <div class="review-stars">
+      ${review.rating}
+    </div>
+
+    <p class="review-text">
+      "${review.text}"
+    </p>
+
+    <div class="review-name">
+      — ${review.name}
+    </div>
+
+  `;
+
+  reviewsGrid.prepend(div);
+
+}
+
+// ================================
 // GALLERY EXPAND BUTTON
 // ================================
 
