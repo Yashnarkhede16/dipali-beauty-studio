@@ -308,50 +308,210 @@
 
   <!-- BOOKING -->
 
-  <section class="section" id="booking">
+<section class="section" id="booking">
 
-    <div class="container">
+  <div class="container">
 
-      <p class="section-subtitle center">
-        Book Appointment
-      </p>
+    <p class="section-subtitle center">
+      Book Appointment
+    </p>
 
-      <h2 class="section-title center">
-        Schedule Your Visit
-      </h2>
+    <h2 class="section-title center">
+      Schedule Your Visit
+    </h2>
 
-      <form class="booking-form">
+    <form class="booking-form" id="bookingForm">
 
-        <input type="text" placeholder="Full Name" required>
+      <!-- FIRST NAME -->
 
-        <input type="tel" placeholder="Mobile Number" required>
+      <input 
+        type="text"
+        id="firstName"
+        placeholder="First Name"
+        required
+      >
 
-        <input type="date" required>
+      <!-- LAST NAME -->
 
-        <select required>
+      <input 
+        type="text"
+        id="lastName"
+        placeholder="Last Name"
+        required
+      >
 
-          <option value="">
-            Select Service
-          </option>
+      <!-- MOBILE -->
 
-          <option>Bridal Makeup</option>
-          <option>Facial</option>
-          <option>Hair Styling</option>
-          <option>Hair Spa</option>
+      <input 
+        type="tel"
+        id="mobile"
+        placeholder="Mobile Number"
+        maxlength="10"
+        required
+      >
 
-        </select>
+      <!-- ADDRESS -->
 
-        <textarea rows="5" placeholder="Additional Notes"></textarea>
+      <textarea
+        id="address"
+        rows="3"
+        placeholder="Address"
+        required
+      ></textarea>
 
-        <button type="submit" class="btn btn-primary">
-          Confirm Booking
-        </button>
+      <!-- DATE -->
 
-      </form>
+      <input 
+        type="date"
+        id="bookingDate"
+        required
+      >
 
-    </div>
+      <!-- SERVICE -->
 
-  </section>
+      <select id="service" required>
+
+        <option value="">
+          Select Service
+        </option>
+
+        <option>Bridal Makeup</option>
+        <option>Facial</option>
+        <option>Hair Styling</option>
+        <option>Hair Spa</option>
+        <option>Threading</option>
+        <option>Party Makeup</option>
+        <option>Halad Makeup</option>
+        <option>Other</option>
+        <option>NA</option>
+
+      </select>
+
+      <!-- NOTES -->
+
+      <textarea
+        id="notes"
+        rows="5"
+        placeholder="Additional Notes"
+      ></textarea>
+
+      <!-- BUTTON -->
+
+      <button type="submit" class="btn btn-primary">
+        Confirm Booking
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+document
+  .getElementById("bookingForm")
+  .addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    // GET VALUES
+
+    const firstName =
+      document.getElementById("firstName").value.trim();
+
+    const lastName =
+      document.getElementById("lastName").value.trim();
+
+    const mobile =
+      document.getElementById("mobile").value.trim();
+
+    const address =
+      document.getElementById("address").value.trim();
+
+    const bookingDate =
+      document.getElementById("bookingDate").value;
+
+    const service =
+      document.getElementById("service").value;
+
+    const notes =
+      document.getElementById("notes").value.trim();
+
+    // MOBILE VALIDATION
+
+    const mobilePattern = /^[6-9]\d{9}$/;
+
+    if(!mobilePattern.test(mobile)){
+
+      alert(
+        "Please enter valid 10 digit mobile number"
+      );
+
+      return;
+
+    }
+
+    // DATE VALIDATION
+
+    const selectedDate = new Date(bookingDate);
+
+    const today = new Date();
+
+    today.setHours(0,0,0,0);
+
+    if(selectedDate < today){
+
+      alert(
+        "Please select future date"
+      );
+
+      return;
+
+    }
+
+    // WHATSAPP MESSAGE
+
+    const message =
+`🌸 New Appointment Booking 🌸
+
+👩 Name:
+${firstName} ${lastName}
+
+📱 Mobile:
+${mobile}
+
+📍 Address:
+${address}
+
+💄 Service:
+${service}
+
+📅 Appointment Date:
+${bookingDate}
+
+📝 Notes:
+${notes || "NA"}
+`;
+
+    // YOUR MOBILE NUMBER
+
+const mobileNumber =
+  "9421522796";
+
+// SMS URL
+
+const smsURL =
+`sms:${mobileNumber}?body=${encodeURIComponent(message)}`;
+
+// OPEN SMS APP
+
+window.location.href = smsURL;F
+});
+
+</script>
 
   <!-- CONTACT -->
 
