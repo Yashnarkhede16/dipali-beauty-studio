@@ -3,16 +3,16 @@
 // ================================
 
 const menuToggle =
-  document.getElementById('menuToggle');
+  document.getElementById("menuToggle");
 
 const navLinks =
-  document.getElementById('navLinks');
+  document.getElementById("navLinks");
 
-if(menuToggle){
+if (menuToggle) {
 
-  menuToggle.addEventListener('click', () => {
+  menuToggle.addEventListener("click", () => {
 
-    navLinks.classList.toggle('show');
+    navLinks.classList.toggle("show");
 
   });
 
@@ -22,15 +22,15 @@ if(menuToggle){
 // CLOSE MENU AFTER CLICK
 // ================================
 
-if(navLinks){
+if (navLinks) {
 
   navLinks
-    .querySelectorAll('a')
+    .querySelectorAll("a")
     .forEach(link => {
 
-      link.addEventListener('click', () => {
+      link.addEventListener("click", () => {
 
-        navLinks.classList.remove('show');
+        navLinks.classList.remove("show");
 
       });
 
@@ -38,37 +38,90 @@ if(navLinks){
 
 }
 
-// ================================
-// GALLERY EXPAND
-// ================================
+// =========================
+// GALLERY SCROLL
+// =========================
 
-const expandBtn =
-  document.getElementById('expandBtn');
+const galleryScroll =
+  document.getElementById("galleryScroll");
 
-const galleryGrid =
-  document.getElementById('galleryGrid');
+const scrollLeftBtn =
+  document.getElementById("scrollLeft");
 
-if(expandBtn){
+const scrollRightBtn =
+  document.getElementById("scrollRight");
 
-  expandBtn.addEventListener('click', () => {
+if (scrollLeftBtn && galleryScroll) {
 
-    galleryGrid.classList.toggle('show-all');
+  scrollLeftBtn.addEventListener("click", () => {
 
-    if(
-      galleryGrid.classList.contains(
-        'show-all'
-      )
-    ){
+    galleryScroll.scrollBy({
+      left: -320,
+      behavior: "smooth"
+    });
 
-      expandBtn.innerText =
-        'Show Less';
+  });
 
-    }
+}
 
-    else{
+if (scrollRightBtn && galleryScroll) {
 
-      expandBtn.innerText =
-        'View All Photos';
+  scrollRightBtn.addEventListener("click", () => {
+
+    galleryScroll.scrollBy({
+      left: 320,
+      behavior: "smooth"
+    });
+
+  });
+
+}
+
+// =========================
+// IMAGE POPUP
+// =========================
+
+const popup =
+  document.getElementById("imagePopup");
+
+const popupImage =
+  document.getElementById("popupImage");
+
+const closePopup =
+  document.getElementById("closePopup");
+
+const galleryImages =
+  document.querySelectorAll(".gallery-card img");
+
+galleryImages.forEach((img) => {
+
+  img.addEventListener("click", () => {
+
+    popup.style.display = "flex";
+
+    popupImage.src = img.src;
+
+  });
+
+});
+
+if (closePopup) {
+
+  closePopup.addEventListener("click", () => {
+
+    popup.style.display = "none";
+
+  });
+
+}
+
+if (popup) {
+
+  popup.addEventListener("click", (e) => {
+
+    if (e.target === popup) {
+
+      popup.style.display = "none";
 
     }
 
@@ -81,18 +134,18 @@ if(expandBtn){
 // ================================
 
 const reviewForm =
-  document.getElementById('reviewForm');
+  document.getElementById("reviewForm");
 
 const reviewsGrid =
-  document.getElementById('reviewsGrid');
+  document.getElementById("reviewsGrid");
 
 // LOAD REVIEWS
 
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
 
   const savedReviews =
     JSON.parse(
-      localStorage.getItem('reviews')
+      localStorage.getItem("reviews")
     ) || [];
 
   savedReviews.forEach(review => {
@@ -105,54 +158,52 @@ window.addEventListener('load', () => {
 
 // SUBMIT REVIEW
 
-if(reviewForm){
+if (reviewForm) {
 
   reviewForm.addEventListener(
-    'submit',
-    function(e){
+    "submit",
+    function (e) {
 
       e.preventDefault();
 
       const name =
         document
-          .getElementById('reviewName')
+          .getElementById("reviewName")
           .value
           .trim();
 
       const rating =
         document
-          .getElementById('reviewRating')
+          .getElementById("reviewRating")
           .value;
 
       const text =
         document
-          .getElementById('reviewText')
+          .getElementById("reviewText")
           .value
           .trim();
 
       const review = {
-
         name,
         rating,
         text
-
       };
 
       // ADD TO UI
 
       addReviewToUI(review);
 
-      // SAVE LOCAL STORAGE
+      // SAVE TO LOCAL STORAGE
 
       const savedReviews =
         JSON.parse(
-          localStorage.getItem('reviews')
+          localStorage.getItem("reviews")
         ) || [];
 
       savedReviews.unshift(review);
 
       localStorage.setItem(
-        'reviews',
+        "reviews",
         JSON.stringify(savedReviews)
       );
 
@@ -160,10 +211,8 @@ if(reviewForm){
 
       reviewForm.reset();
 
-      // SUCCESS MESSAGE
-
       alert(
-        'Thank you for your review ❤️'
+        "Thank you for your review ❤️"
       );
 
     });
@@ -172,12 +221,12 @@ if(reviewForm){
 
 // ADD REVIEW FUNCTION
 
-function addReviewToUI(review){
+function addReviewToUI(review) {
 
   const div =
-    document.createElement('div');
+    document.createElement("div");
 
-  div.classList.add('review-card');
+  div.classList.add("review-card");
 
   div.innerHTML = `
 
@@ -204,16 +253,19 @@ function addReviewToUI(review){
 // ================================
 
 const bookingForm =
-  document.getElementById('bookingForm');
+  document.getElementById("bookingForm");
 
 const dateInput =
-  document.getElementById('date');
+  document.getElementById("date");
+
+const timeSelect =
+  document.getElementById("time");
 
 // ================================
 // MIN DATE = TODAY
 // ================================
 
-if(dateInput){
+if (dateInput) {
 
   const today =
     new Date();
@@ -223,148 +275,245 @@ if(dateInput){
 
   const mm =
     String(today.getMonth() + 1)
-    .padStart(2, '0');
+      .padStart(2, "0");
 
   const dd =
     String(today.getDate())
-    .padStart(2, '0');
+      .padStart(2, "0");
 
   const minDate =
     `${yyyy}-${mm}-${dd}`;
 
   dateInput.setAttribute(
-    'min',
+    "min",
     minDate
   );
 
 }
 
 // ================================
+// ALL TIME OPTIONS
+// ================================
+
+const allTimeOptions = [
+
+  "10:00 AM",
+  "11:00 AM",
+  "12:00 PM",
+  "01:00 PM",
+  "02:00 PM",
+  "03:00 PM",
+  "04:00 PM",
+  "05:00 PM",
+  "06:00 PM"
+
+];
+
+// ================================
 // CONVERT TIME
 // ================================
 
-function convertTo24Hour(time12h){
+function convertTo24Hour(time12h) {
 
   const [time, modifier] =
-    time12h.split(' ');
+    time12h.split(" ");
 
   let [hours, minutes] =
-    time.split(':');
+    time.split(":");
 
   hours = parseInt(hours);
 
-  if(
-    modifier === 'PM' &&
+  if (
+    modifier === "PM" &&
     hours !== 12
-  ){
+  ) {
 
     hours += 12;
 
   }
 
-  if(
-    modifier === 'AM' &&
+  if (
+    modifier === "AM" &&
     hours === 12
-  ){
+  ) {
 
     hours = 0;
 
   }
 
   return `${String(hours)
-    .padStart(2,'0')}:${minutes}`;
+    .padStart(2, "0")}:${minutes}`;
 
 }
 
 // ================================
-// OTP SYSTEM
+// UPDATE TIME OPTIONS
 // ================================
 
-let generatedOTP = "";
+function updateTimeOptions() {
+
+  if (!dateInput || !timeSelect) return;
+
+  const selectedDate =
+    dateInput.value;
+
+  const today =
+    new Date();
+
+  const currentDate =
+    today.toISOString().split("T")[0];
+
+  // RESET OPTIONS
+
+  timeSelect.innerHTML = `
+    <option value="">
+      Select Time
+    </option>
+  `;
+
+  allTimeOptions.forEach(time => {
+
+    let showOption = true;
+
+    // IF TODAY SELECTED
+
+    if (selectedDate === currentDate) {
+
+      const currentHours =
+        today.getHours();
+
+      const currentMinutes =
+        today.getMinutes();
+
+      const currentTime =
+        `${String(currentHours)
+          .padStart(2, "0")}:${String(currentMinutes)
+          .padStart(2, "0")}`;
+
+      const option24 =
+        convertTo24Hour(time);
+
+      // HIDE PAST TIME
+
+      if (option24 <= currentTime) {
+
+        showOption = false;
+
+      }
+
+    }
+
+    // ADD OPTION
+
+    if (showOption) {
+
+      const option =
+        document.createElement("option");
+
+      option.value = time;
+
+      option.textContent = time;
+
+      timeSelect.appendChild(option);
+
+    }
+
+  });
+
+}
+
+// DATE CHANGE
+
+if (dateInput) {
+
+  dateInput.addEventListener(
+    "change",
+    updateTimeOptions
+  );
+
+}
+
+// INITIAL LOAD
+
+updateTimeOptions();
 
 // ================================
 // BOOKING SUBMIT
 // ================================
 
-if(bookingForm){
+if (bookingForm) {
 
   bookingForm.addEventListener(
-    'submit',
-    function(e){
+    "submit",
+    function (e) {
 
       e.preventDefault();
 
-      // ================================
       // GET VALUES
-      // ================================
 
       const firstName =
         document
-          .getElementById('firstName')
+          .getElementById("firstName")
           .value
           .trim();
 
       const lastName =
         document
-          .getElementById('lastName')
+          .getElementById("lastName")
           .value
           .trim();
 
       const phone =
         document
-          .getElementById('phone')
+          .getElementById("phone")
           .value
           .trim();
 
       const address =
         document
-          .getElementById('address')
+          .getElementById("address")
           .value
           .trim();
 
       const selectedDate =
         document
-          .getElementById('date')
+          .getElementById("date")
           .value;
 
       const selectedTime =
         document
-          .getElementById('time')
+          .getElementById("time")
           .value;
 
       const service =
         document
-          .getElementById('service')
+          .getElementById("service")
           .value;
 
       const message =
         document
-          .getElementById('message')
+          .getElementById("message")
           .value
           .trim();
 
-      // ================================
       // MOBILE VALIDATION
-      // ================================
 
       const mobilePattern =
         /^[6-9]\d{9}$/;
 
-      if(
+      if (
         !mobilePattern.test(phone)
-      ){
+      ) {
 
         alert(
-          'Enter valid 10 digit mobile number.'
+          "Enter valid 10 digit mobile number."
         );
 
         return;
 
       }
 
-      // ================================
       // CHECK DATE & TIME
-      // ================================
 
       const convertedTime =
         convertTo24Hour(selectedTime);
@@ -377,78 +526,24 @@ if(bookingForm){
           `${selectedDate}T${convertedTime}`
         );
 
-      if(
+      if (
         bookingDateTime <=
         currentDateTime
-      ){
+      ) {
 
         alert(
-          'Please select future appointment date and time.'
+          "Please select future appointment date and time."
         );
 
         return;
 
       }
 
-      // ================================
-      // GENERATE OTP
-      // ================================
-
-      generatedOTP =
-        Math.floor(
-          1000 + Math.random() * 9000
-        ).toString();
-
-      // ================================
-      // SEND OTP MESSAGE
-      // ================================
-
-      const otpMessage =
-`Your Dipali Beauty Studio OTP is: ${generatedOTP}`;
-
-      const otpWhatsappURL =
-`https://wa.me/91${phone}?text=${encodeURIComponent(otpMessage)}`;
-
-      window.open(
-        otpWhatsappURL,
-        '_blank'
-      );
-
-      // ================================
-      // ASK USER OTP
-      // ================================
-
-      const enteredOTP =
-        prompt(
-          'Enter OTP received on WhatsApp'
-        );
-
-      // ================================
-      // OTP CHECK
-      // ================================
-
-      if(
-        enteredOTP !== generatedOTP
-      ){
-
-        alert(
-          'Invalid OTP. Please try again.'
-        );
-
-        return;
-
-      }
-
-      // ================================
-      // FINAL WHATSAPP MESSAGE
-      // ================================
-
-      const whatsappNumber =
-        '919421522796';
+      // WHATSAPP MESSAGE
 
       const whatsappMessage =
 
-`🌸 NEW APPOINTMENT BOOKING 🌸
+`🌸 *NEW APPOINTMENT BOOKING* 🌸
 
 👩 Name:
 ${firstName} ${lastName}
@@ -474,30 +569,30 @@ ${message || "NA"}
 Thank you ❤️
 Dipali Beauty Studio`;
 
-      const encodedMessage =
-        encodeURIComponent(
-          whatsappMessage
-        );
+      // WHATSAPP NUMBER
+
+      const whatsappNumber =
+        "919421522796";
+
+      // WHATSAPP URL
 
       const whatsappURL =
-`https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-      // ================================
       // OPEN WHATSAPP
-      // ================================
 
       window.open(
         whatsappURL,
-        '_blank'
+        "_blank"
       );
 
-      // ================================
-      // SUCCESS
-      // ================================
+      // SUCCESS MESSAGE
 
       alert(
-        'Booking request submitted successfully ❤️'
+        "Booking request submitted successfully ❤️"
       );
+
+      // RESET FORM
 
       bookingForm.reset();
 

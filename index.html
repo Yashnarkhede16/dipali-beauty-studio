@@ -369,75 +369,162 @@
 
   </section>
 
-  <!-- =========================
-       GALLERY
-  ========================== -->
+ <!-- =========================
+     GALLERY
+========================== -->
 
-  <section
-    class="section"
-    id="gallery"
-  >
+<section
+  class="section gallery-section"
+  id="gallery"
+>
 
-    <div class="container">
+  <div class="container">
 
-      <p class="section-subtitle center">
+    <p class="section-subtitle center">
+      Gallery
+    </p>
 
-        Gallery
+    <h2 class="section-title center">
+      Our Beautiful Work
+    </h2>
 
-      </p>
+    <!-- ARROWS -->
 
-      <h2 class="section-title center">
+    <div class="gallery-wrapper">
 
-        Our Work
+      <button class="gallery-arrow left" id="scrollLeft">
+        ❮
+      </button>
 
-      </h2>
+      <!-- SCROLL AREA -->
 
       <div
-        class="gallery-grid"
-        id="galleryGrid"
+        class="gallery-scroll"
+        id="galleryScroll"
       >
 
-        <img src="images/Gallery/gallery1.jpeg" alt="">
-        <img src="images/Gallery/gallery2.jpeg" alt="">
-        <img src="images/Gallery/gallery3.jpeg" alt="">
-        <img src="images/Gallery/gallery8.jpeg" alt="">
-        <img src="images/Gallery/gallery4.jpeg" alt="">
-        <img src="images/Gallery/gallery5.jpeg" alt="">
-        <img src="images/Gallery/gallery6.jpeg" alt="">
-        <img src="images/Gallery/gallery7.jpeg" alt="">
-        <img src="images/Gallery/gallery9.jpeg" alt="">
-        <img src="images/Gallery/gallery10.jpeg" alt="">
-        <img src="images/Gallery/gallery11.jpeg" alt="">
-        <img src="images/Gallery/gallery12.png" alt="">
-        <img src="images/Gallery/gallery13.jpeg" alt="">
-        <img src="images/Gallery/gallery14.jpeg" alt="">
-        <img src="images/Gallery/gallery15.jpeg" alt="">
-        <img src="images/Gallery/gallery16.jpeg" alt="">
-        <img src="images/Gallery/gallery17.jpeg" alt="">
-        <img src="images/Gallery/gallery18.png" alt="">
-        <img src="images/Gallery/gallery19.png" alt="">
-        <img src="images/Gallery/gallery20.jpeg" alt="">
-        <img src="images/Gallery/gallery21.jpeg" alt="">
-        <img src="images/Gallery/gallery22.jpeg" alt="">
+        <!-- IMAGE -->
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery1.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery2.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery3.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery8.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery4.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery5.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery6.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery7.jpeg" alt="">
+        </div>
+
+     <div class="gallery-card">
+          <img src="images/Gallery/gallery9.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery10.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery11.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery12.png" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery13.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery14.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery15.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery16.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery17.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery18.png" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery19.png" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery20.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery21.jpeg" alt="">
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Gallery/gallery22.jpeg" alt="">
+        </div>
+        
+  
 
       </div>
 
-      <div class="gallery-btn">
-
-        <button
-          id="expandBtn"
-          class="btn btn-primary"
-        >
-
-          View All Photos
-
-        </button>
-
-      </div>
+      <button class="gallery-arrow right" id="scrollRight">
+        ❯
+      </button>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
+
+<!-- IMAGE POPUP -->
+
+<div
+  class="image-popup"
+  id="imagePopup"
+>
+
+  <span id="closePopup">
+    ✕
+  </span>
+
+  <img
+    id="popupImage"
+    src=""
+    alt=""
+  >
+
+</div>
 
   <!-- =========================
        PRICING
@@ -861,9 +948,7 @@
 
         </p>
 
-        <br>
-
-        < <a href="tel:+919421522796">
+       <a href="tel:+919421522796">
         📞 +91 9421522796
         </a>
 
@@ -880,6 +965,7 @@
     target="_blank"
     class="instagram-btn"
   >
+   
     📸 Follow Us On Instagram
   </a>
 
